@@ -1,72 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Self Growth Guide</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Self Growth — eBook</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #ffecd2, #fcb69f);
-      color: #333;
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background: linear-gradient(135deg,#fff2d2,#fef6e0);
+      color:#2b2b2b;
     }
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background: rgba(0,0,0,0.7);
-      color: white;
+
+    header{
+      text-align:center;
+      padding:40px 20px 10px;
     }
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-      color: #fffd69;
+    header h1{ margin:0; font-size:2.4rem; font-weight:800; }
+    header p{ margin:10px 0 0; color:#666; }
+
+    main{
+      max-width:900px;
+      margin:30px auto;
+      padding:20px;
     }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 40px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-      text-align: center;
+
+    section{
+      background:#fff;
+      border-radius:14px;
+      padding:30px;
+      box-shadow:0 12px 28px rgba(0,0,0,0.06);
+      margin-bottom:28px;
     }
-    .book-img {
-      max-width: 200px;
-      margin: 20px auto;
-      display: block;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+
+    section h2{ font-size:1.8rem; margin:0 0 14px; }
+    section p{ color:#555; line-height:1.6; }
+
+    .book-img{
+      display:block;
+      margin:22px auto;
+      max-width:240px;
+      border-radius:12px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
     }
-    .price {
-      font-size: 1.5em;
-      margin: 20px 0;
-      color: #ffb347;
-      font-weight: bold;
+
+    .price{
+      text-align:center;
+      font-size:1.5rem;
+      font-weight:700;
+      margin:16px 0;
     }
-    .buy-btn {
-      display: inline-block;
-      padding: 15px 35px;
-      font-size: 1.2em;
-      font-weight: bold;
-      background: linear-gradient(90deg, #ff512f, #dd2476);
-      color: white;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: transform 0.3s ease, background 0.3s ease;
+
+    /* Transparent Buy Button */
+    .buy-btn{
+      display:inline-block;
+      padding:15px 40px;
+      font-size:1.2rem;
+      font-weight:700;
+      color:#ff5722;
+      border:2px solid #ff5722;
+      border-radius:50px;
+      text-decoration:none;
+      transition: all .3s ease;
     }
-    .buy-btn:hover {
-      transform: scale(1.1);
-      background: linear-gradient(90deg, #dd2476, #ff512f);
+    .buy-btn:hover{
+      background:#ff5722;
+      color:#fff;
+      transform:translateY(-3px);
+      box-shadow:0 8px 20px rgba(255,87,34,0.3);
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.7);
-      font-size: 0.9em;
-      margin-top: 50px;
-      color: white;
+
+    footer{
+      text-align:center;
+      padding:18px;
+      background:#333;
+      color:#fff;
+      border-radius:6px;
+      max-width:900px;
+      margin:20px auto 50px;
+    }
+
+    @media (max-width:520px){
+      .buy-btn{ padding:12px 28px; font-size:1rem; }
+      .book-img{ max-width:160px; }
     }
   </style>
 </head>
@@ -74,19 +93,40 @@
 
   <header>
     <h1>Self Growth Guide</h1>
-    <p>Unlock your potential and master digital skills 🚀</p>
+    <p>Unlock your potential — practical strategies for growth 🚀</p>
   </header>
 
-  <section>
-    <h2>Get Your Copy</h2>
-    <p>Invest in your personal growth today. This eBook provides practical tips, growth strategies, and powerful insights.</p>
-    <img class="book-img" src="https://i.postimg.cc/0N1kzmbD/1757816012.jpg" alt="Self Growth eBook">
-    <div class="price">Price: ₹99</div>
-    <a class="buy-btn" href="upi://pay?pa=souravn027@okicici&pn=Sourav&mc=0000&tid=1234567890&tr=Self%20Growth%20Book&am=99&cu=INR">Buy Now</a>
-  </section>
+  <main>
+
+    <section>
+      <h2>About the eBook</h2>
+      <p>
+        This eBook provides practical tips, growth strategies, and proven methods to help you improve focus, build habits, and grow digitally. Invest in yourself and unlock your true potential!
+      </p>
+    </section>
+
+    <section style="text-align:center;">
+      <h2>Get Your Copy</h2>
+
+      <img class="book-img" src="https://i.postimg.cc/0N1zkmmD/1757816012.jpg" alt="Self Growth eBook">
+
+      <div class="price">Price: ₹99</div>
+
+      <!-- Buy Now button with UPI -->
+      <a class="buy-btn" href="upi://pay?pa=souravn027@okicici&pn=Self%20Growth%20eBook&am=99&cu=INR">
+        Buy Now — ₹99
+      </a>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Email: growwithsourav007@gmail.com</p>
+    </section>
+
+  </main>
 
   <footer>
-    © 2025 Self Growth Guide | Designed by Sourav
+    © 2025 Self Growth | Designed by Sourav
   </footer>
 
 </body>
