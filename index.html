@@ -5,65 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Self Growth eBook</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Reset */
+    * {
       margin: 0;
       padding: 0;
-      background: #fafafa;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f8f9fb;
       color: #333;
-    }
-
-    header {
-      background: linear-gradient(135deg, #ff7e5f, #feb47b);
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 800px;
-      margin: 30px auto;
+      max-width: 900px;
+      margin: 40px auto;
       padding: 20px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
-    .section-title {
+    h1, h2 {
       text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .about {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+    }
+
+    .about h2 {
       font-size: 1.8rem;
       margin-bottom: 15px;
-      color: #222;
+      color: #111;
     }
 
-    .about-text {
+    .about p {
       font-size: 1rem;
-      line-height: 1.6;
-      text-align: center;
-      margin-bottom: 30px;
-      color: #444;
+      color: #555;
     }
 
-    .ebook {
+    .ebook-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 25px;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
-    .ebook img {
-      max-width: 200px;
+    .ebook-card img {
+      max-width: 230px;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
       margin-bottom: 20px;
     }
 
@@ -71,63 +67,49 @@
       font-size: 1.2rem;
       font-weight: bold;
       margin: 15px 0;
-      color: #000;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 25px;
-      font-size: 1rem;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #ff6b00, #ff2d55);
+      color: #fff;
+      font-size: 1.1rem;
       font-weight: bold;
-      color: white;
-      background: linear-gradient(135deg, #ff416c, #ff4b2b);
       border: none;
-      border-radius: 30px;
-      cursor: pointer;
+      border-radius: 50px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
     }
 
     .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 20px;
+      background: linear-gradient(135deg, #ff2d55, #ff6b00);
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Self Growth Guide</h1>
-    <p>Unlock your potential and master digital skills 🚀</p>
-  </header>
-
   <div class="container">
-    <h2 class="section-title">About the eBook</h2>
-    <p class="about-text">
-      This eBook provides practical tips, growth strategies, and proven methods 
-      to help you improve focus, build habits, and grow digitally. 
-      Invest in yourself and unlock your true potential!
-    </p>
+    <!-- About Section -->
+    <div class="about">
+      <h2>About the eBook</h2>
+      <p>
+        This eBook provides practical tips, growth strategies, and proven methods to help you 
+        improve focus, build habits, and grow digitally. <br>
+        Invest in yourself and unlock your true potential!
+      </p>
+    </div>
 
-    <div class="ebook">
-      <h2 class="section-title">Get Your Copy</h2>
+    <!-- eBook Card -->
+    <div class="ebook-card">
+      <h2>Get Your Copy</h2>
       <img src="https://i.postimg.cc/2ySyB9kC/1757816012.jpg" alt="Self Growth eBook">
-      <p class="price">Price: ₹99</p>
-      <a href="upi://pay?pa=YOURUPIID@upi&pn=YourName&am=99&cu=INR" class="btn">Buy Now — ₹99</a>
+      <div class="price">Price: ₹99</div>
+      <a class="btn" href="upi://pay?pa=souravn027@okicici&pn=SelfGrowthBook&am=99&cu=INR">
+        Buy Now — ₹99
+      </a>
     </div>
   </div>
-
-  <footer>
-    © 2025 Self Growth | All Rights Reserved
-  </footer>
-
 </body>
 </html>
