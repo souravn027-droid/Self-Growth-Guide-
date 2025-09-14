@@ -89,13 +89,69 @@
     }
   </style>
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self Growth eBook</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+    .about {
+      margin-bottom: 30px;
+    }
+    .ebook-card {
+      text-align: center;
+    }
+    .ebook-card img {
+      width: 250px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: #ff5722;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #e64a19;
+    }
+  </style>
+</head>
 <body>
   <div class="container">
     <!-- About Section -->
     <div class="about">
       <h2>About the eBook</h2>
       <p>
-        This eBook provides practical tips, growth strategies, and proven methods to help you 
+        This eBook provides practical tips, growth strategies, and proven methods to help you
         improve focus, build habits, and grow digitally. <br>
         Invest in yourself and unlock your true potential!
       </p>
@@ -104,11 +160,20 @@
     <!-- eBook Card -->
     <div class="ebook-card">
       <h2>Get Your Copy</h2>
-      <img src="https://i.postimg.cc/2ySyB9kC/1757816012.jpg" alt="Self Growth eBook">
+      <img src="https://i.postimg.cc/2ySyB9K6/1757816012.jpg" alt="Self Growth eBook">
       <div class="price">Price: ₹99</div>
+      
+      <!-- UPI Payment Button -->
       <a class="btn" href="upi://pay?pa=souravn027@okicici&pn=SelfGrowthBook&am=99&cu=INR">
-        Buy Now — ₹99
+        Pay with UPI
       </a>
+
+      <!-- Verification Form Button -->
+      <div style="margin-top:20px;">
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSczPuNN8d_E62BQA2FKuUepGdgu-fV90jVdYBYV6SF2lt_mmQ/viewform?usp=header" target="_blank">
+          Upload Payment Screenshot
+        </a>
+      </div>
     </div>
   </div>
 </body>
