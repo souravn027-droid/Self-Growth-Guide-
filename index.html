@@ -1,115 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Self Growth Guide</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background: #fff8f0;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      padding: 0;
       color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
-
     header {
       text-align: center;
-      padding: 60px 20px;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #f6d365, #fda085);
       color: white;
     }
-
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin: 0;
-      font-weight: bold;
     }
-
     header p {
       font-size: 1.2rem;
       margin-top: 10px;
     }
-
     section {
-      flex: 1;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 30px;
       background: #fff;
-      margin: 20px auto;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-      max-width: 600px;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #2a5298;
-    }
-
-    .book-img {
-      max-width: 250px;
-      margin: 20px auto;
-      display: block;
       border-radius: 15px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
-
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .ebook-img {
+      display: block;
+      max-width: 220px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
     .price {
-      font-size: 1.5rem;
-      margin: 20px 0;
+      text-align: center;
+      font-size: 1.3rem;
+      margin: 15px 0;
       font-weight: bold;
-      color: #e63946;
     }
-
     .buy-btn {
-      display: inline-block;
-      padding: 15px 40px;
-      font-size: 1.2rem;
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      padding: 12px 25px;
+      font-size: 1.1rem;
       font-weight: bold;
-      color: white;
-      background: linear-gradient(90deg, #ff512f, #dd2476);
-      border-radius: 50px;
+      color: #ff4d00;
+      border: 2px solid #ff4d00;
+      border-radius: 30px;
       text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      width: fit-content;
     }
-
     .buy-btn:hover {
-      transform: scale(1.05);
-      background: linear-gradient(90deg, #dd2476, #ff512f);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #fff;
-      background: #1e3c72;
-      margin-top: auto;
+      background: #ff4d00;
+      color: white;
+      box-shadow: 0 4px 12px rgba(255,77,0,0.3);
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Self Growth Guide</h1>
     <p>Unlock your potential and master digital skills 🚀</p>
   </header>
 
   <section>
-    <h2>Get Your Copy</h2>
-    <p>Invest in your personal growth today. This eBook provides practical tips, growth strategies, and powerful insights.</p>
-    <img class="book-img" src="https://i.postimg.cc/0N1kmzbJ/1758716012.jpg" alt="Self Growth eBook">
-    <div class="price">Price: ₹99</div>
-    <a class="buy-btn" href="upi://pay?pa=souravn027@okicici&pn=Sourav&am=99&cu=INR">Buy Now ₹99</a>
+    <h2>About the eBook</h2>
+    <p>
+      This eBook provides practical tips, growth strategies, and proven methods 
+      to help you improve focus, build habits, and grow digitally. Invest in yourself 
+      and unlock your true potential!
+    </p>
   </section>
 
-  <footer>
-    © 2025 Self Growth | Designed by Sourav
-  </footer>
-
+  <section>
+    <h2 style="text-align:center;">Get Your Copy</h2>
+    <img src="https://i.postimg.cc/cCHyKwpL/self-growth-book.jpg" alt="eBook Cover" class="ebook-img">
+    <p class="price">Price: ₹99</p>
+    <a class="buy-btn" href="upi://pay?pa=souravn027@okicici&pn=Sourav&am=99&cu=INR">
+      Buy Now — ₹99
+    </a>
+  </section>
 </body>
 </html>
