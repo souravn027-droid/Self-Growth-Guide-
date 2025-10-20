@@ -1,292 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gameplay Improvement | XTREMEGOD</title>
-  <style>
-    :root{
-      --purple-1:#4a148c;
-      --purple-2:#8e24aa;
-      --accent:#6a1b9a;
-    }
-    body{
-      margin:0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(180deg,var(--purple-1),var(--purple-2));
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
-      padding:20px;
-      text-align:center;
-    }
-
-    .card{
-      width:100%;
-      max-width:460px;
-      background:#fff;
-      color:#222;
-      border-radius:18px;
-      padding:22px;
-      box-shadow:0 12px 30px rgba(0,0,0,0.3);
-      animation:pop .9s ease;
-    }
-    @keyframes pop { from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:none} }
-
-    .top {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-    }
-
-    .title{
-      font-size:22px;
-      font-weight:800;
-      color:var(--accent);
-      margin:0 0 4px 0;
-    }
-    .by{
-      font-size:12px;
-      color:#666;
-      margin:0 0 12px 0;
-    }
-
-    .offer {
-      display:inline-block;
-      background:var(--accent);
-      color:#fff;
-      padding:8px 14px;
-      border-radius:20px;
-      font-weight:700;
-      margin-bottom:14px;
-      box-shadow:0 6px 18px rgba(138,43,226,0.14);
-    }
-
-    .details{
-      color:#444;
-      font-size:14px;
-      line-height:1.5;
-      margin:12px 0 18px 0;
-    }
-
-    .price{
-      font-size:20px;
-      margin:8px 0;
-      font-weight:700;
-    }
-    .price del { color:#999; margin-right:8px; font-weight:600; }
-
-    .qr {
-      width:230px;
-      height:auto;
-      border-radius:10px;
-      border:3px solid var(--purple-2);
-      box-shadow:0 8px 22px rgba(0,0,0,0.12);
-      margin:14px auto;
-      display:block;
-    }
-
-    .actions{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      margin-top:12px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      background:var(--accent);
-      color:#fff;
-      border:none;
-      padding:12px 16px;
-      border-radius:28px;
-      font-weight:700;
-      cursor:pointer;
-      font-size:15px;
-      box-shadow:0 6px 18px rgba(106,27,154,0.18);
-    }
-    .btn.secondary{
-      background:#f3f4f6;
-      color:#333;
-      box-shadow:none;
-    }
-    .hint{
-      font-size:13px;
-      color:#777;
-      margin-top:10px;
-    }
-
-    /* overlay instructions after click */
-    .overlay{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.6);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:20px;
-      visibility:hidden;
-      opacity:0;
-      transition:all .18s ease;
-      z-index:50;
-    }
-    .overlay.show{ visibility:visible; opacity:1; }
-    .modal{
-      width:100%;
-      max-width:420px;
-      background:#fff;
-      color:#222;
-      border-radius:14px;
-      padding:18px;
-      text-align:left;
-    }
-    .modal h3{ margin:0 0 8px 0; color:var(--accent); }
-    .modal p{ margin:6px 0; color:#555; font-size:14px; line-height:1.45; }
-    .modal .ig{ font-weight:700; color:#111; }
-    .closeBtn{
-      margin-top:12px;
-      display:inline-block;
-      padding:10px 14px;
-      background:var(--accent);
-      color:#fff;
-      border-radius:12px;
-      cursor:pointer;
-      border:none;
-      font-weight:700;
-    }
-
-    /* small */
-    @media(max-width:420px){
-      .title{ font-size:20px }
-      .qr{ width:200px }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gameplay Improvement | XTREMEGOD_</title>
+<style>
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #4a148c, #8e24aa);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+.card {
+  background: #fff;
+  color: #222;
+  border-radius: 18px;
+  padding: 25px;
+  max-width: 420px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-in;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+.title {
+  color: #6a1b9a;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.subtitle {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.offer {
+  display: inline-block;
+  background: #8e24aa;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: 0 4px 10px rgba(142, 36, 170, 0.3);
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1;}
+  50% { transform: scale(1.08); opacity: 0.85;}
+  100% { transform: scale(1); opacity: 1;}
+}
+.details {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 15px 0 20px 0;
+}
+.qr {
+  width: 230px;
+  border-radius: 12px;
+  border: 3px solid #8e24aa;
+  margin: 12px 0;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+.btn {
+  display: block;
+  width: 100%;
+  background: #6a1b9a;
+  color: #fff;
+  border: none;
+  padding: 13px 16px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 10px;
+  box-shadow: 0 6px 18px rgba(106,27,154,0.2);
+}
+.secondary {
+  background: #f3f3f3;
+  color: #333;
+  box-shadow: none;
+}
+.note {
+  color: #6a1b9a;
+  font-size: 13px;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+</style>
 </head>
 <body>
 
-  <div class="card">
-    <div class="top">
-      <div style="text-align:left">
-        <div class="title">Gameplay Improvement</div>
-        <div class="by">by <strong style="color:#6a1b9a">XTREMEGOD</strong></div>
-      </div>
-      <div style="text-align:right">
-        <div class="offer">⚡ Limited Time — ₹79</div>
-      </div>
-    </div>
+<div class="card">
+  <div class="title">Gameplay Improvement</div>
+  <div class="subtitle">by <b>XTREMEGOD_</b></div>
 
-    <div class="details">
-      🎯 <strong>BGMI Gameplay Improvement Pack</strong><br>
-      🚀 Pro control setup, aim drills, gyro tips & movement training — used by top players.<br>
-      🔥 Instant access after payment — send screenshot to get your guide.
-    </div>
+  <div class="offer">⚡ Limited Time Offer — ₹79 Only!</div>
 
-    <div class="price"><del>₹199</del> <span style="color:#6a1b9a">₹79 Only</span></div>
-
-    <!-- QR image -->
-    <img class="qr" src="https://i.postimg.cc/W34HGm2p/Whats-App-Image-2025-10-20-at-08-10-18-e93b972f.jpg" alt="Scan to pay">
-
-    <!-- Action buttons -->
-    <div class="actions">
-      <button class="btn" id="payBtn">Pay Now (Open UPI)</button>
-      <button class="btn secondary" id="screenshotNote">Take Screenshot & Pay</button>
-      <button class="btn secondary" id="copyUpi">Copy UPI ID</button>
-    </div>
-
-    <div class="hint">If deep-link doesn't open, copy UPI ID and pay manually from any UPI app.</div>
+  <div class="details">
+    🎯 Learn BGMI advanced controls & sensitivity setup.<br>
+    🚀 Improve aim, reflexes & gyro accuracy.<br>
+    🔥 Boost performance & gameplay like a pro.
   </div>
 
-  <!-- Overlay shown after clicking Pay / instruct -->
-  <div class="overlay" id="overlay">
-    <div class="modal">
-      <h3>Payment Instructions</h3>
-      <p>1. Your UPI app should open automatically. If it didn't, copy the UPI ID and paste in your app.</p>
-      <p>2. Pay <strong>₹79</strong> to the UPI ID shown below.</p>
-      <p><strong>UPI ID:</strong> <span id="upiText">YOUR_UPI_ID@bank</span></p>
-      <p>3. After successful payment — take a screenshot of the payment confirmation and send it on Instagram to <span class="ig">@xtremegod</span>.</p>
-      <p>4. We will send your <strong>BGMI Gameplay Improvement</strong> guide after verification.</p>
+  <img src="https://i.postimg.cc/W34HGm2p/Whats-App-Image-2025-10-20-at-08-10-18-e93b972f.jpg" alt="PhonePe QR" class="qr">
 
-      <button class="closeBtn" id="closeOverlay">Okay, I got it</button>
-    </div>
-  </div>
+  <p><del>₹199</del> <b style="color:#6a1b9a;">₹79 Only</b></p>
 
-  <script>
-    // ====== CONFIG: replace UPI_ID and IG_HANDLE ======
-    const UPI_ID = "YOUR_UPI_ID@bank";         // <-- REPLACE this with your actual UPI ID
-    const IG_HANDLE = "@xtremegod";            // <-- change if your Instagram handle is different
-    const AMOUNT = "79";                       // amount in rupees
+  <!-- Pay Now button (opens UPI app) -->
+  <a href="upi://pay?pa=souravn027@okicici&pn=XTREMEGOD&am=79&cu=INR&tn=BGMI Gameplay Improvement">
+    <button class="btn">Pay Now</button>
+  </a>
 
-    // populate UPI text in modal
-    document.getElementById('upiText').textContent = UPI_ID;
-    document.querySelector('.modal .ig')?.textContent = IG_HANDLE;
+  <!-- Copy button -->
+  <button class="btn secondary" onclick="copyUpi()">Copy UPI ID</button>
 
-    // Helper: build UPI deep link
-    function buildUpiLink() {
-      // pa = payee address (UPI ID), pn = payee name (optional), am = amount, cu = INR, tn = note
-      const pa = encodeURIComponent(UPI_ID);
-      const pn = encodeURIComponent("XTREMEGOD");
-      const am = encodeURIComponent(AMOUNT);
-      const tn = encodeURIComponent("BGMI Gameplay Improvement - ₹" + AMOUNT);
-      return `upi://pay?pa=${pa}&pn=${pn}&am=${am}&cu=INR&tn=${tn}`;
-    }
+  <p class="note" id="msg">
+    📸 After payment, send screenshot to <b>@xtremegod_</b> on Instagram<br>
+    to get your BGMI Gameplay Improvement book.
+  </p>
+</div>
 
-    // Open overlay
-    function showOverlay(){
-      const ov = document.getElementById('overlay');
-      ov.classList.add('show');
-    }
-    function hideOverlay(){
-      const ov = document.getElementById('overlay');
-      ov.classList.remove('show');
-    }
+<script>
+function copyUpi() {
+  const upi = "souravn027@okicici";
+  navigator.clipboard.writeText(upi).then(() => {
+    document.getElementById("msg").innerHTML = "✅ UPI ID copied! Paste it in GPay / PhonePe to pay ₹79.<br>📸 After payment, send screenshot to <b>@xtremegod_</b>.";
+  }).catch(() => {
+    alert("⚠️ Copy failed. Please copy manually: " + upi);
+  });
+}
+</script>
 
-    // Pay button: try to open UPI deep link
-    document.getElementById('payBtn').addEventListener('click', function(){
-      showOverlay();
-
-      // Try to open UPI apps via location change. On most Android phones this opens chooser of UPI apps.
-      const upiLink = buildUpiLink();
-
-      // Try opening link
-      window.location.href = upiLink;
-
-      // Note: Some browsers block immediate redirect. Overlay guides user in that case.
-    });
-
-    // Screenshot note button (just shows overlay)
-    document.getElementById('screenshotNote').addEventListener('click', function(){
-      showOverlay();
-    });
-
-    // Copy UPI ID to clipboard
-    document.getElementById('copyUpi').addEventListener('click', async function(){
-      try{
-        await navigator.clipboard.writeText(UPI_ID);
-        alert("UPI ID copied to clipboard: " + UPI_ID);
-      }catch(e){
-        // fallback
-        const input = document.createElement('input');
-        input.value = UPI_ID;
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        document.body.removeChild(input);
-        alert("UPI ID copied to clipboard: " + UPI_ID);
-      }
-      showOverlay();
-    });
-
-    document.getElementById('closeOverlay').addEventListener('click', function(){
-      hideOverlay();
-    });
-
-    // Also close overlay if user taps outside modal
-    document.getElementById('overlay').addEventListener('click', function(e){
-      if(e.target === this) hideOverlay();
-    });
-  </script>
 </body>
 </html>
