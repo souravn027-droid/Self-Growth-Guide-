@@ -1,150 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Gameplay Improvement | XTREMEGOD</title>
   <style>
-    body {
-      margin: 0;
+    :root{
+      --purple-1:#4a148c;
+      --purple-2:#8e24aa;
+      --accent:#6a1b9a;
+    }
+    body{
+      margin:0;
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(180deg, #4a148c, #8e24aa);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-      text-align: center;
+      background: linear-gradient(180deg,var(--purple-1),var(--purple-2));
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      padding:20px;
+      text-align:center;
     }
 
-    .card {
-      background: white;
-      color: #333;
-      padding: 30px 25px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      width: 95%;
-      max-width: 420px;
-      animation: fadeIn 1.2s ease-in-out;
+    .card{
+      width:100%;
+      max-width:460px;
+      background:#fff;
+      color:#222;
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.3);
+      animation:pop .9s ease;
+    }
+    @keyframes pop { from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:none} }
+
+    .top {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    .title{
+      font-size:22px;
+      font-weight:800;
+      color:var(--accent);
+      margin:0 0 4px 0;
     }
-
-    .title {
-      font-size: 28px;
-      font-weight: 800;
-      color: #6a1b9a;
-      margin-bottom: 5px;
-    }
-
-    .subtitle {
-      font-size: 15px;
-      color: #777;
-      margin-bottom: 15px;
+    .by{
+      font-size:12px;
+      color:#666;
+      margin:0 0 12px 0;
     }
 
     .offer {
-      background: #8e24aa;
-      color: #fff;
-      padding: 7px 16px;
-      border-radius: 25px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      display: inline-block;
-      margin-bottom: 15px;
-      animation: pulse 1.8s infinite;
-      box-shadow: 0 3px 8px rgba(142,36,170,0.3);
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:8px 14px;
+      border-radius:20px;
+      font-weight:700;
+      margin-bottom:14px;
+      box-shadow:0 6px 18px rgba(138,43,226,0.14);
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.07); opacity: 0.85; }
-      100% { transform: scale(1); opacity: 1; }
+    .details{
+      color:#444;
+      font-size:14px;
+      line-height:1.5;
+      margin:12px 0 18px 0;
     }
 
-    .details {
-      font-size: 14px;
-      color: #555;
-      line-height: 1.6;
-      margin: 15px 0 20px 0;
+    .price{
+      font-size:20px;
+      margin:8px 0;
+      font-weight:700;
     }
-
-    .amount {
-      font-size: 22px;
-      font-weight: 600;
-      margin: 10px 0;
-    }
-
-    .amount del {
-      color: #888;
-      margin-right: 6px;
-    }
+    .price del { color:#999; margin-right:8px; font-weight:600; }
 
     .qr {
-      width: 250px;
-      border-radius: 12px;
-      border: 3px solid #8e24aa;
-      margin: 15px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      width:230px;
+      height:auto;
+      border-radius:10px;
+      border:3px solid var(--purple-2);
+      box-shadow:0 8px 22px rgba(0,0,0,0.12);
+      margin:14px auto;
+      display:block;
     }
 
-    .note {
-      background: #8e24aa;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-size: 15px;
-      margin-top: 12px;
-      font-weight: 600;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    .actions{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      margin-top:12px;
+      flex-wrap:wrap;
     }
 
-    .footer {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #777;
+    .btn{
+      background:var(--accent);
+      color:#fff;
+      border:none;
+      padding:12px 16px;
+      border-radius:28px;
+      font-weight:700;
+      cursor:pointer;
+      font-size:15px;
+      box-shadow:0 6px 18px rgba(106,27,154,0.18);
+    }
+    .btn.secondary{
+      background:#f3f4f6;
+      color:#333;
+      box-shadow:none;
+    }
+    .hint{
+      font-size:13px;
+      color:#777;
+      margin-top:10px;
     }
 
-    .highlight {
-      color: #6a1b9a;
-      font-weight: 600;
+    /* overlay instructions after click */
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      visibility:hidden;
+      opacity:0;
+      transition:all .18s ease;
+      z-index:50;
+    }
+    .overlay.show{ visibility:visible; opacity:1; }
+    .modal{
+      width:100%;
+      max-width:420px;
+      background:#fff;
+      color:#222;
+      border-radius:14px;
+      padding:18px;
+      text-align:left;
+    }
+    .modal h3{ margin:0 0 8px 0; color:var(--accent); }
+    .modal p{ margin:6px 0; color:#555; font-size:14px; line-height:1.45; }
+    .modal .ig{ font-weight:700; color:#111; }
+    .closeBtn{
+      margin-top:12px;
+      display:inline-block;
+      padding:10px 14px;
+      background:var(--accent);
+      color:#fff;
+      border-radius:12px;
+      cursor:pointer;
+      border:none;
+      font-weight:700;
+    }
+
+    /* small */
+    @media(max-width:420px){
+      .title{ font-size:20px }
+      .qr{ width:200px }
     }
   </style>
 </head>
-
 <body>
-  <div class="card">
-    <div class="title">Gameplay Improvement</div>
-    <div class="subtitle">by <span class="highlight">XTREMEGOD</span></div>
 
-    <div class="offer">⚡ Limited Time Offer — Only ₹79!</div>
+  <div class="card">
+    <div class="top">
+      <div style="text-align:left">
+        <div class="title">Gameplay Improvement</div>
+        <div class="by">by <strong style="color:#6a1b9a">XTREMEGOD</strong></div>
+      </div>
+      <div style="text-align:right">
+        <div class="offer">⚡ Limited Time — ₹79</div>
+      </div>
+    </div>
 
     <div class="details">
-      🎯 Improve your <strong>BGMI gameplay</strong> with expert tips & advanced control setup.<br><br>
-      🚀 Boost your aim, reflexes & gyro accuracy.<br>
-      💪 Learn close-combat, spray transfer & movement techniques.<br>
-      🔥 Special tricks used by top esports players.
+      🎯 <strong>BGMI Gameplay Improvement Pack</strong><br>
+      🚀 Pro control setup, aim drills, gyro tips & movement training — used by top players.<br>
+      🔥 Instant access after payment — send screenshot to get your guide.
     </div>
 
-    <div class="amount">
-      <del>₹199</del> <span style="color:#6a1b9a;">₹79 Only</span>
+    <div class="price"><del>₹199</del> <span style="color:#6a1b9a">₹79 Only</span></div>
+
+    <!-- QR image -->
+    <img class="qr" src="https://i.postimg.cc/W34HGm2p/Whats-App-Image-2025-10-20-at-08-10-18-e93b972f.jpg" alt="Scan to pay">
+
+    <!-- Action buttons -->
+    <div class="actions">
+      <button class="btn" id="payBtn">Pay Now (Open UPI)</button>
+      <button class="btn secondary" id="screenshotNote">Take Screenshot & Pay</button>
+      <button class="btn secondary" id="copyUpi">Copy UPI ID</button>
     </div>
 
-    <img
-      src="https://i.postimg.cc/W34HGm2p/Whats-App-Image-2025-10-20-at-08-10-18-e93b972f.jpg"
-      alt="PhonePe QR"
-      class="qr"
-    />
-
-    <div class="note">📸 Take Screenshot & Pay ₹79</div>
-
-    <div class="footer">Secure UPI Payment • XTREMEGOD</div>
+    <div class="hint">If deep-link doesn't open, copy UPI ID and pay manually from any UPI app.</div>
   </div>
+
+  <!-- Overlay shown after clicking Pay / instruct -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <h3>Payment Instructions</h3>
+      <p>1. Your UPI app should open automatically. If it didn't, copy the UPI ID and paste in your app.</p>
+      <p>2. Pay <strong>₹79</strong> to the UPI ID shown below.</p>
+      <p><strong>UPI ID:</strong> <span id="upiText">YOUR_UPI_ID@bank</span></p>
+      <p>3. After successful payment — take a screenshot of the payment confirmation and send it on Instagram to <span class="ig">@xtremegod</span>.</p>
+      <p>4. We will send your <strong>BGMI Gameplay Improvement</strong> guide after verification.</p>
+
+      <button class="closeBtn" id="closeOverlay">Okay, I got it</button>
+    </div>
+  </div>
+
+  <script>
+    // ====== CONFIG: replace UPI_ID and IG_HANDLE ======
+    const UPI_ID = "YOUR_UPI_ID@bank";         // <-- REPLACE this with your actual UPI ID
+    const IG_HANDLE = "@xtremegod";            // <-- change if your Instagram handle is different
+    const AMOUNT = "79";                       // amount in rupees
+
+    // populate UPI text in modal
+    document.getElementById('upiText').textContent = UPI_ID;
+    document.querySelector('.modal .ig')?.textContent = IG_HANDLE;
+
+    // Helper: build UPI deep link
+    function buildUpiLink() {
+      // pa = payee address (UPI ID), pn = payee name (optional), am = amount, cu = INR, tn = note
+      const pa = encodeURIComponent(UPI_ID);
+      const pn = encodeURIComponent("XTREMEGOD");
+      const am = encodeURIComponent(AMOUNT);
+      const tn = encodeURIComponent("BGMI Gameplay Improvement - ₹" + AMOUNT);
+      return `upi://pay?pa=${pa}&pn=${pn}&am=${am}&cu=INR&tn=${tn}`;
+    }
+
+    // Open overlay
+    function showOverlay(){
+      const ov = document.getElementById('overlay');
+      ov.classList.add('show');
+    }
+    function hideOverlay(){
+      const ov = document.getElementById('overlay');
+      ov.classList.remove('show');
+    }
+
+    // Pay button: try to open UPI deep link
+    document.getElementById('payBtn').addEventListener('click', function(){
+      showOverlay();
+
+      // Try to open UPI apps via location change. On most Android phones this opens chooser of UPI apps.
+      const upiLink = buildUpiLink();
+
+      // Try opening link
+      window.location.href = upiLink;
+
+      // Note: Some browsers block immediate redirect. Overlay guides user in that case.
+    });
+
+    // Screenshot note button (just shows overlay)
+    document.getElementById('screenshotNote').addEventListener('click', function(){
+      showOverlay();
+    });
+
+    // Copy UPI ID to clipboard
+    document.getElementById('copyUpi').addEventListener('click', async function(){
+      try{
+        await navigator.clipboard.writeText(UPI_ID);
+        alert("UPI ID copied to clipboard: " + UPI_ID);
+      }catch(e){
+        // fallback
+        const input = document.createElement('input');
+        input.value = UPI_ID;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        alert("UPI ID copied to clipboard: " + UPI_ID);
+      }
+      showOverlay();
+    });
+
+    document.getElementById('closeOverlay').addEventListener('click', function(){
+      hideOverlay();
+    });
+
+    // Also close overlay if user taps outside modal
+    document.getElementById('overlay').addEventListener('click', function(e){
+      if(e.target === this) hideOverlay();
+    });
+  </script>
 </body>
 </html>
