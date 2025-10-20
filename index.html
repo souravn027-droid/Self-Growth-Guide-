@@ -8,68 +8,89 @@
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(180deg, #6a1b9a, #8e24aa);
+      background: linear-gradient(180deg, #4a148c, #8e24aa);
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 20px;
       text-align: center;
     }
 
-    .container {
+    .card {
       background: white;
       color: #333;
-      padding: 30px;
+      padding: 30px 25px;
       border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-      width: 90%;
-      max-width: 400px;
-      animation: fadeIn 1.2s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      width: 95%;
+      max-width: 420px;
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .title {
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 800;
       color: #6a1b9a;
       margin-bottom: 5px;
-      letter-spacing: 1px;
     }
 
     .subtitle {
+      font-size: 15px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .offer {
+      background: #8e24aa;
+      color: #fff;
+      padding: 7px 16px;
+      border-radius: 25px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 15px;
+      animation: pulse 1.8s infinite;
+      box-shadow: 0 3px 8px rgba(142,36,170,0.3);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.07); opacity: 0.85; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .details {
       font-size: 14px;
-      color: #999;
-      margin-bottom: 20px;
+      color: #555;
+      line-height: 1.6;
+      margin: 15px 0 20px 0;
     }
 
     .amount {
-      font-size: 20px;
+      font-size: 22px;
+      font-weight: 600;
       margin: 10px 0;
     }
 
     .amount del {
       color: #888;
-      margin-right: 8px;
+      margin-right: 6px;
     }
 
     .qr {
-      width: 260px;
-      height: auto;
-      border-radius: 10px;
-      margin: 15px 0;
+      width: 250px;
+      border-radius: 12px;
       border: 3px solid #8e24aa;
-    }
-
-    .upi {
-      font-size: 14px;
-      color: #6a1b9a;
-      font-weight: 600;
-      margin-top: 5px;
+      margin: 15px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     .note {
@@ -79,35 +100,47 @@
       padding: 12px 20px;
       border-radius: 30px;
       font-size: 15px;
-      margin-top: 15px;
+      margin-top: 12px;
       font-weight: 600;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     .footer {
-      margin-top: 15px;
+      margin-top: 20px;
       font-size: 12px;
       color: #777;
+    }
+
+    .highlight {
+      color: #6a1b9a;
+      font-weight: 600;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="card">
     <div class="title">Gameplay Improvement</div>
-    <div class="subtitle">XTREMEGOD Payment Portal</div>
+    <div class="subtitle">by <span class="highlight">XTREMEGOD</span></div>
+
+    <div class="offer">⚡ Limited Time Offer — Only ₹79!</div>
+
+    <div class="details">
+      🎯 Improve your <strong>BGMI gameplay</strong> with expert tips & advanced control setup.<br><br>
+      🚀 Boost your aim, reflexes & gyro accuracy.<br>
+      💪 Learn close-combat, spray transfer & movement techniques.<br>
+      🔥 Special tricks used by top esports players.
+    </div>
 
     <div class="amount">
-      <del>₹199</del> <strong>₹79</strong>
+      <del>₹199</del> <span style="color:#6a1b9a;">₹79 Only</span>
     </div>
 
     <img
-      src="https://i.postimg.cc/ydyT5MWk/IMG-20251020-WA0002-1.jpg"
+      src="https://i.postimg.cc/W34HGm2p/Whats-App-Image-2025-10-20-at-08-10-18-e93b972f.jpg"
       alt="PhonePe QR"
       class="qr"
     />
-
-    <div class="upi">📱 Scan & Pay using PhonePe / Any UPI App</div>
 
     <div class="note">📸 Take Screenshot & Pay ₹79</div>
 
