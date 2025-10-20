@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XTREMEGOD | Payment</title>
+  <title>Gameplay Improvement | XTREMEGOD</title>
   <style>
-    /* ---------- Basic Page Style ---------- */
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
@@ -18,7 +17,6 @@
       text-align: center;
     }
 
-    /* ---------- Card Container ---------- */
     .container {
       background: white;
       color: #333;
@@ -30,13 +28,11 @@
       animation: fadeIn 1.2s ease;
     }
 
-    /* ---------- Animations ---------- */
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* ---------- Heading ---------- */
     .title {
       font-size: 30px;
       font-weight: 800;
@@ -45,14 +41,12 @@
       letter-spacing: 1px;
     }
 
-    /* ---------- Subtext ---------- */
     .subtitle {
       font-size: 14px;
       color: #999;
       margin-bottom: 20px;
     }
 
-    /* ---------- Amount Section ---------- */
     .amount {
       font-size: 20px;
       margin: 10px 0;
@@ -63,7 +57,6 @@
       margin-right: 8px;
     }
 
-    /* ---------- QR Image ---------- */
     .qr {
       width: 260px;
       height: auto;
@@ -72,7 +65,6 @@
       border: 3px solid #8e24aa;
     }
 
-    /* ---------- UPI Text ---------- */
     .upi {
       font-size: 14px;
       color: #6a1b9a;
@@ -80,37 +72,30 @@
       margin-top: 5px;
     }
 
-    /* ---------- Footer ---------- */
+    .note {
+      background: #8e24aa;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 15px;
+      margin-top: 15px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
     .footer {
       margin-top: 15px;
       font-size: 12px;
       color: #777;
-    }
-
-    /* ---------- Button ---------- */
-    .btn {
-      background: #8e24aa;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 10px;
-    }
-
-    .btn:hover {
-      background: #6a1b9a;
-      transform: scale(1.05);
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <div class="title">XTREMEGOD</div>
-    <div class="subtitle">Official Payment Portal</div>
+    <div class="title">Gameplay Improvement</div>
+    <div class="subtitle">XTREMEGOD Payment Portal</div>
 
     <div class="amount">
       <del>₹199</del> <strong>₹79</strong>
@@ -122,11 +107,9 @@
       class="qr"
     />
 
-    <div class="upi">📱 Scan & Pay with PhonePe / Any UPI App</div>
+    <div class="upi">📱 Scan & Pay using PhonePe / Any UPI App</div>
 
-    <button class="btn" onclick="alert('Open your UPI app and scan the QR to pay ₹79')">
-      Pay Now
-    </button>
+    <div class="note">📸 Take Screenshot & Pay ₹79</div>
 
     <div class="footer">Secure UPI Payment • XTREMEGOD</div>
   </div>
