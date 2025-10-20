@@ -1,180 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+ <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Self Growth eBook</title>
+  <title>Master Your Growth - E-book</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: #f8f9fb;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    h1, h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .about {
-      background: #fff;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      margin-bottom: 40px;
-    }
-
-    .about h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #111;
-    }
-
-    .about p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .ebook-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    .ebook-card img {
-      max-width: 230px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-
-    .price {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      background: linear-gradient(135deg, #ff6b00, #ff2d55);
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: 0.3s ease;
-      box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
-    }
-
-    .btn:hover {
-      background: linear-gradient(135deg, #ff2d55, #ff6b00);
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Self Growth eBook</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      text-align: center;
-      color: #333;
-    }
-    .about {
-      margin-bottom: 30px;
-    }
-    .ebook-card {
-      text-align: center;
-    }
-    .ebook-card img {
-      width: 250px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .btn {
-      display: inline-block;
-      background: #ff5722;
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-    .btn:hover {
-      background: #e64a19;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- About Section -->
-    <div class="about">
-      <h2>About the eBook</h2>
-      <p>
-        This eBook provides practical tips, growth strategies, and proven methods to help you
-        improve focus, build habits, and grow digitally. <br>
-        Invest in yourself and unlock your true potential!
-      </p>
-    </div>
-
-    <!-- eBook Card -->
-    <div class="ebook-card">
-      <h2>Get Your Copy</h2>
-      <img src="https://i.postimg.cc/2ySyB9K6/1757816012.jpg" alt="Self Growth eBook">
-      <div class="price">Price: ₹99</div>
-      
-      <!-- UPI Payment Button -->
-      <a class="btn" href="upi://pay?pa=souravn027@okicici&pn=SelfGrowthBook&am=99&cu=INR">
-        Pay with UPI
-      </a>
-
-      <!-- Verification Form Button -->
-      <div style="margin-top:20px;">
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSczPuNN8d_E62BQA2FKuUepGdgu-fV90jVdYBYV6SF2lt_mmQ/viewform?usp=header" target="_blank">
-          Upload Payment Screenshot
-        </a>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .book-shadow {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .success-checkmark {
+            animation: checkmark 0.6s ease-in-out;
+        }
+        
+        @keyframes checkmark {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .modal-backdrop {
+            backdrop-filter: blur(5px);
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="min-h-full bg-gray-50"><!-- Header -->
+  <header class="gradient-bg text-white py-4">
+   <div class="container mx-auto px-4">
+    <h1 class="text-2xl font-bold text-center">📚 Digital Library</h1>
+   </div>
+  </header><!-- Main Content -->
+  <main class="container mx-auto px-4 py-8"><!-- Hero Section -->
+   <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center"><!-- Book Cover -->
+     <div class="text-center">
+      <div class="inline-block book-shadow rounded-lg overflow-hidden bg-white p-6">
+       <div class="w-64 h-80 mx-auto bg-gradient-to-br from-blue-600 to-purple-700 rounded-lg flex flex-col justify-between p-6 text-white">
+        <div>
+         <h2 id="book-title" class="text-xl font-bold mb-2">Master Your Growth</h2>
+         <p id="book-subtitle" class="text-sm opacity-90">The Ultimate Guide to YouTube &amp; Instagram Success</p>
+        </div>
+        <div class="text-center">
+         <div class="text-4xl mb-2">
+          📈
+         </div>
+         <div class="text-xs opacity-75">
+          Self Improvement Guide
+         </div>
+        </div>
+       </div>
       </div>
+     </div><!-- Book Details -->
+     <div class="space-y-6">
+      <div>
+       <h1 id="main-title" class="text-4xl font-bold text-gray-800 mb-4">Master Your Growth</h1>
+       <p id="main-subtitle" class="text-xl text-gray-600 mb-6">The Ultimate Guide to YouTube &amp; Instagram Success</p>
+      </div><!-- About the Book -->
+      <div class="bg-white rounded-lg p-6 shadow-lg">
+       <h3 class="text-2xl font-semibold text-gray-800 mb-4">📖 About This Book</h3>
+       <p class="text-gray-600 mb-4">Transform your social media presence and unlock your potential with this comprehensive self-improvement guide. Learn proven strategies to:</p>
+       <ul class="space-y-2 text-gray-600">
+        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Grow your YouTube channel from zero to thousands of subscribers</li>
+        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Master Instagram growth tactics and engagement strategies</li>
+        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Develop a winning mindset for content creation</li>
+        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Build your personal brand and online authority</li>
+        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Monetize your content and turn passion into profit</li>
+       </ul>
+      </div><!-- Pricing -->
+      <div class="bg-gradient-to-r from-green-500 to-blue-600 rounded-lg p-6 text-white">
+       <div class="text-center">
+        <p class="text-lg mb-2">Limited Time Offer!</p>
+        <div class="flex items-center justify-center space-x-4"><span id="original-price" class="text-2xl line-through opacity-75">₹199</span> <span id="current-price" class="text-4xl font-bold">₹99</span>
+        </div>
+        <p class="text-sm mt-2 opacity-90">Save 50% Today Only!</p>
+       </div>
+      </div><!-- Buy Button --> <button id="buyButton" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-xl pulse-animation transition-all duration-300 transform hover:scale-105"> 🛒 Buy Now - ₹99 (₹199) </button> <!-- Trust Badges -->
+      <div class="flex justify-center space-x-6 text-sm text-gray-500">
+       <div class="flex items-center"><span class="text-green-500 mr-1">🔒</span> Secure Payment
+       </div>
+       <div class="flex items-center"><span class="text-blue-500 mr-1">📱</span> Instant Download
+       </div>
+       <div class="flex items-center"><span class="text-purple-500 mr-1">💯</span> Money Back Guarantee
+       </div>
+      </div>
+     </div>
     </div>
-  </div>
-</body>
+   </div><!-- Features Section -->
+   <div class="max-w-4xl mx-auto mt-16">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What You'll Learn</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+     <div class="bg-white rounded-lg p-6 shadow-lg text-center">
+      <div class="text-4xl mb-4">
+       🎥
+      </div>
+      <h3 class="text-xl font-semibold mb-3">YouTube Mastery</h3>
+      <p class="text-gray-600">Learn to create engaging content, optimize for search, and build a loyal subscriber base</p>
+     </div>
+     <div class="bg-white rounded-lg p-6 shadow-lg text-center">
+      <div class="text-4xl mb-4">
+       📸
+      </div>
+      <h3 class="text-xl font-semibold mb-3">Instagram Growth</h3>
+      <p class="text-gray-600">Master stories, reels, and posts to maximize reach and engagement on Instagram</p>
+     </div>
+     <div class="bg-white rounded-lg p-6 shadow-lg text-center">
+      <div class="text-4xl mb-4">
+       🚀
+      </div>
+      <h3 class="text-xl font-semibold mb-3">Personal Development</h3>
+      <p class="text-gray-600">Build confidence, overcome challenges, and develop the mindset of successful creators</p>
+     </div>
+    </div>
+   </div>
+  </main><!-- Payment Modal -->
+  <div id="paymentModal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden flex items-center justify-center z-50">
+   <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+    <div class="text-center mb-6">
+     <h3 class="text-2xl font-bold text-gray-800 mb-2">Complete Your Purchase</h3>
+     <p class="text-gray-600">Secure payment via UPI</p>
+     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mt-4"><strong>DEMO ONLY:</strong> This is a sample payment interface. No actual payment will be processed.
+     </div>
+    </div>
+    <div class="space-y-4">
+     <div class="bg-gray-50 rounded-lg p-4">
+      <div class="flex justify-between items-center"><span class="text-gray-600">E-book:</span> <span class="font-semibold">Master Your Growth</span>
+      </div>
+      <div class="flex justify-between items-center mt-2"><span class="text-gray-600">Price:</span> <span class="font-bold text-green-600">₹99</span>
+      </div>
+     </div>
+     <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+      <div class="text-2xl mb-2">
+       📱
+      </div>
+      <p class="text-sm text-gray-600 mb-2">Pay using UPI</p>
+      <p id="upi-display" class="font-mono text-lg font-bold text-blue-600">souravn027@okicici</p>
+      <p class="text-xs text-gray-500 mt-2">Scan QR code or use UPI ID above</p>
+     </div>
+     <div class="space-y-3"><button id="simulatePayment" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"> 💳 Simulate Payment (Demo) </button> <button id="closeModal" class="w-full bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-3 px-6 rounded-lg transition-colors"> Cancel </button>
+     </div>
+    </div>
+   </div>
+  </div><!-- Success Modal -->
+  <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden flex items-center justify-center z-50">
+   <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 text-center">
+    <div class="success-checkmark text-6xl text-green-500 mb-4">
+     ✅
+    </div>
+    <h3 class="text-2xl font-bold text-gray-800 mb-4">Payment Successful!</h3>
+    <p class="text-gray-600 mb-6">Thank you for your purchase. Your e-book is ready for download.</p>
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+     <p class="text-sm text-blue-800 mb-2"><strong>DEMO NOTE:</strong> In a real implementation, this would verify payment before showing download link.</p>
+    </div>
+    <div class="space-y-3"><button id="downloadButton" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"> 📥 Download Your E-book (PDF) </button> <button id="closeSuccess" class="w-full bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-2 px-6 rounded-lg transition-colors"> Close </button>
+    </div>
+   </div>
+  </div><!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 mt-16">
+   <div class="container mx-auto px-4 text-center">
+    <p class="mb-2">© 2024 Digital Library. All rights reserved.</p>
+    <p class="text-sm text-gray-400">Transform your social media presence today!</p>
+   </div>
+  </footer>
+  <script>
+        // Default configuration
+        const defaultConfig = {
+            book_title: "Master Your Growth",
+            book_subtitle: "The Ultimate Guide to YouTube & Instagram Success",
+            current_price: "₹99",
+            original_price: "₹199",
+            upi_id: "souravn027@okicici"
+        };
+
+        // Render function
+        async function render(config) {
+            const bookTitle = config.book_title || defaultConfig.book_title;
+            const bookSubtitle = config.book_subtitle || defaultConfig.book_subtitle;
+            const currentPrice = config.current_price || defaultConfig.current_price;
+            const originalPrice = config.original_price || defaultConfig.original_price;
+            const upiId = config.upi_id || defaultConfig.upi_id;
+
+            // Update book titles
+            document.getElementById('book-title').textContent = bookTitle;
+            document.getElementById('book-subtitle').textContent = bookSubtitle;
+            document.getElementById('main-title').textContent = bookTitle;
+            document.getElementById('main-subtitle').textContent = bookSubtitle;
+
+            // Update pricing
+            document.getElementById('current-price').textContent = currentPrice;
+            document.getElementById('original-price').textContent = originalPrice;
+            document.getElementById('buyButton').textContent = `🛒 Buy Now - ${currentPrice} (${originalPrice})`;
+
+            // Update UPI ID
+            document.getElementById('upi-display').textContent = upiId;
+        }
+
+        // Capabilities mapping
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        // Edit panel values mapping
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["book_title", config.book_title || defaultConfig.book_title],
+                ["book_subtitle", config.book_subtitle || defaultConfig.book_subtitle],
+                ["current_price", config.current_price || defaultConfig.current_price],
+                ["original_price", config.original_price || defaultConfig.original_price],
+                ["upi_id", config.upi_id || defaultConfig.upi_id]
+            ]);
+        }
+
+        // Initialize SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                render,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+
+        // Modal functionality
+        const paymentModal = document.getElementById('paymentModal');
+        const successModal = document.getElementById('successModal');
+        const buyButton = document.getElementById('buyButton');
+        const closeModal = document.getElementById('closeModal');
+        const closeSuccess = document.getElementById('closeSuccess');
+        const simulatePayment = document.getElementById('simulatePayment');
+        const downloadButton = document.getElementById('downloadButton');
+
+        // Show payment modal
+        buyButton.addEventListener('click', () => {
+            paymentModal.classList.remove('hidden');
+        });
+
+        // Close payment modal
+        closeModal.addEventListener('click', () => {
+            paymentModal.classList.add('hidden');
+        });
+
+        // Close success modal
+        closeSuccess.addEventListener('click', () => {
+            successModal.classList.add('hidden');
+        });
+
+        // Simulate payment process
+        simulatePayment.addEventListener('click', () => {
+            simulatePayment.textContent = 'Processing...';
+            simulatePayment.disabled = true;
+            
+            setTimeout(() => {
+                paymentModal.classList.add('hidden');
+                successModal.classList.remove('hidden');
+                simulatePayment.textContent = '💳 Simulate Payment (Demo)';
+                simulatePayment.disabled = false;
+            }, 2000);
+        });
+
+        // Handle download
+        downloadButton.addEventListener('click', () => {
+            // In a real implementation, this would provide the actual PDF download
+            // For demo purposes, we'll show an alert
+            const demoMessage = document.createElement('div');
+            demoMessage.className = 'fixed top-4 right-4 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            demoMessage.innerHTML = '📥 Demo: PDF download would start here!';
+            document.body.appendChild(demoMessage);
+            
+            setTimeout(() => {
+                document.body.removeChild(demoMessage);
+            }, 3000);
+        });
+
+        // Close modals when clicking outside
+        paymentModal.addEventListener('click', (e) => {
+            if (e.target === paymentModal) {
+                paymentModal.classList.add('hidden');
+            }
+        });
+
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                successModal.classList.add('hidden');
+            }
+        });
+
+        // Initial render
+        render(defaultConfig);
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9916881d27dfa735',t:'MTc2MDk0MjUxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
