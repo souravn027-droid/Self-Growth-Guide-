@@ -1,144 +1,371 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Gameplay Improvement | XTREMEGOD_</title>
-<style>
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, #4a148c, #8e24aa);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-  text-align: center;
-}
-.card {
-  background: #fff;
-  color: #222;
-  border-radius: 18px;
-  padding: 25px;
-  max-width: 420px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 0.8s ease-in;
-}
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-.title {
-  color: #6a1b9a;
-  font-size: 26px;
-  font-weight: 800;
-  margin-bottom: 6px;
-}
-.subtitle {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-.offer {
-  display: inline-block;
-  background: #8e24aa;
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: 25px;
-  font-weight: 600;
-  font-size: 13px;
-  box-shadow: 0 4px 10px rgba(142, 36, 170, 0.3);
-  animation: pulse 1.8s infinite;
-}
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1;}
-  50% { transform: scale(1.08); opacity: 0.85;}
-  100% { transform: scale(1); opacity: 1;}
-}
-.details {
-  color: #555;
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 15px 0 20px 0;
-}
-.qr {
-  width: 230px;
-  border-radius: 12px;
-  border: 3px solid #8e24aa;
-  margin: 12px 0;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-}
-.btn {
-  display: block;
-  width: 100%;
-  background: #6a1b9a;
-  color: #fff;
-  border: none;
-  padding: 13px 16px;
-  border-radius: 30px;
-  font-weight: 700;
-  cursor: pointer;
-  font-size: 15px;
-  margin-top: 10px;
-  box-shadow: 0 6px 18px rgba(106,27,154,0.2);
-}
-.secondary {
-  background: #f3f3f3;
-  color: #333;
-  box-shadow: none;
-}
-.note {
-  color: #6a1b9a;
-  font-size: 13px;
-  margin-top: 15px;
-  line-height: 1.5;
-}
-</style>
-</head>
-<body>
+<!doctype html>
+<html lang="hi" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGMI Pro Guide - Ultimate Gaming Ebook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .game-card {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border: 1px solid #0f3460;
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+ </head>
+ <body class="h-full bg-gray-900 text-white">
+  <script>
+        // Default configuration
+        const defaultConfig = {
+            site_title: "BGMI Pro Guide",
+            ebook_title: "Ultimate BGMI Master Guide",
+            price: "₹299",
+            description: "Master BGMI with pro tips and strategies",
+            features_text: "Advanced strategies, weapon guides, map tactics",
+            primary_color: "#667eea",
+            secondary_color: "#764ba2",
+            accent_color: "#ff6b6b",
+            text_color: "#ffffff",
+            card_color: "#1a1a2e"
+        };
 
-<div class="card">
-  <div class="title">Gameplay Improvement</div>
-  <div class="subtitle">by <b>XTREMEGOD_</b></div>
+        let orders = [];
+        let orderCounter = 1;
 
-  <div class="offer">⚡ Limited Time Offer — ₹79 Only!</div>
+        // Data SDK handler
+        const dataHandler = {
+            onDataChanged(data) {
+                orders = data;
+                updateOrderCount();
+            }
+        };
 
-  <div class="details">
-    🎯 Learn BGMI advanced controls & sensitivity setup.<br>
-    🚀 Improve aim, reflexes & gyro accuracy.<br>
-    🔥 Boost performance & gameplay like a pro.
+        // Element SDK implementation
+        async function onConfigChange(config) {
+            // Update text content
+            document.getElementById('site-title').textContent = config.site_title || defaultConfig.site_title;
+            document.getElementById('ebook-title').textContent = config.ebook_title || defaultConfig.ebook_title;
+            document.getElementById('price-display').textContent = config.price || defaultConfig.price;
+            document.getElementById('description-text').textContent = config.description || defaultConfig.description;
+            document.getElementById('features-text').textContent = config.features_text || defaultConfig.features_text;
+
+            // Update colors
+            const primaryColor = config.primary_color || defaultConfig.primary_color;
+            const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+            const accentColor = config.accent_color || defaultConfig.accent_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const cardColor = config.card_color || defaultConfig.card_color;
+
+            // Apply colors to elements
+            document.body.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+            document.body.style.color = textColor;
+            
+            const cards = document.querySelectorAll('.game-card');
+            cards.forEach(card => {
+                card.style.background = `linear-gradient(145deg, ${cardColor}, #16213e)`;
+            });
+
+            const buttons = document.querySelectorAll('.btn-primary');
+            buttons.forEach(btn => {
+                btn.style.backgroundColor = accentColor;
+                btn.style.borderColor = accentColor;
+            });
+
+            const priceElements = document.querySelectorAll('.price-highlight');
+            priceElements.forEach(el => {
+                el.style.color = accentColor;
+            });
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.primary_color || defaultConfig.primary_color,
+                        set: (value) => {
+                            config.primary_color = value;
+                            window.elementSdk.setConfig({ primary_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.secondary_color || defaultConfig.secondary_color,
+                        set: (value) => {
+                            config.secondary_color = value;
+                            window.elementSdk.setConfig({ secondary_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.accent_color || defaultConfig.accent_color,
+                        set: (value) => {
+                            config.accent_color = value;
+                            window.elementSdk.setConfig({ accent_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            window.elementSdk.setConfig({ text_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.card_color || defaultConfig.card_color,
+                        set: (value) => {
+                            config.card_color = value;
+                            window.elementSdk.setConfig({ card_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: {
+                    get: () => config.font_family || defaultConfig.font_family || "Inter",
+                    set: (value) => {
+                        config.font_family = value;
+                        window.elementSdk.setConfig({ font_family: value });
+                    }
+                },
+                fontSizeable: {
+                    get: () => config.font_size || defaultConfig.font_size || 16,
+                    set: (value) => {
+                        config.font_size = value;
+                        window.elementSdk.setConfig({ font_size: value });
+                    }
+                }
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["site_title", config.site_title || defaultConfig.site_title],
+                ["ebook_title", config.ebook_title || defaultConfig.ebook_title],
+                ["price", config.price || defaultConfig.price],
+                ["description", config.description || defaultConfig.description],
+                ["features_text", config.features_text || defaultConfig.features_text]
+            ]);
+        }
+
+        // Initialize SDKs
+        async function initializeApp() {
+            try {
+                if (window.dataSdk) {
+                    const initResult = await window.dataSdk.init(dataHandler);
+                    if (!initResult.isOk) {
+                        console.error("Failed to initialize data SDK");
+                    }
+                }
+
+                if (window.elementSdk) {
+                    await window.elementSdk.init({
+                        defaultConfig,
+                        onConfigChange,
+                        mapToCapabilities,
+                        mapToEditPanelValues
+                    });
+                }
+            } catch (error) {
+                console.error("Initialization error:", error);
+            }
+        }
+
+        function updateOrderCount() {
+            const countElement = document.getElementById('order-count');
+            if (countElement) {
+                countElement.textContent = orders.length;
+            }
+        }
+
+        function generateOrderId() {
+            return 'BGMI' + Date.now().toString().slice(-6);
+        }
+
+        async function handlePurchase(event) {
+            event.preventDefault();
+            
+            if (orders.length >= 999) {
+                showMessage("Order limit reached. Please contact support.", "error");
+                return;
+            }
+
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            const orderData = {
+                customer_name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                payment_method: formData.get('payment'),
+                order_date: new Date().toISOString(),
+                order_id: generateOrderId()
+            };
+
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+
+            try {
+                if (window.dataSdk) {
+                    const result = await window.dataSdk.create(orderData);
+                    if (result.isOk) {
+                        showMessage(`Order successful! Order ID: ${orderData.order_id}`, "success");
+                        form.reset();
+                        closeModal();
+                    } else {
+                        showMessage("Order failed. Please try again.", "error");
+                    }
+                } else {
+                    showMessage(`Demo Order Created! Order ID: ${orderData.order_id}`, "success");
+                    form.reset();
+                    closeModal();
+                }
+            } catch (error) {
+                showMessage("Order failed. Please try again.", "error");
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+
+        function showMessage(message, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `fixed top-4 right-4 p-4 rounded-lg z-50 ${type === 'success' ? 'bg-green-600' : 'bg-red-600'} text-white`;
+            messageDiv.textContent = message;
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 5000);
+        }
+
+        function openModal() {
+            document.getElementById('purchase-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('purchase-modal').classList.add('hidden');
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
+  <div class="min-h-full"><!-- Header -->
+   <header class="bg-black bg-opacity-50 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+     <div class="flex justify-between items-center">
+      <h1 id="site-title" class="text-2xl font-bold">BGMI Pro Guide</h1>
+      <div class="flex items-center space-x-4"><span class="text-sm">Orders: <span id="order-count" class="font-bold">0</span></span> <button onclick="openModal()" class="btn-primary bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg font-semibold transition-colors"> Buy Now </button>
+      </div>
+     </div>
+    </div>
+   </header><!-- Hero Section -->
+   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-16">
+     <h2 id="ebook-title" class="text-5xl font-bold mb-6">Ultimate BGMI Master Guide</h2>
+     <p id="description-text" class="text-xl text-gray-300 mb-8">Master BGMI with pro tips and strategies</p>
+     <div class="text-6xl font-bold price-highlight mb-8"><span id="price-display">₹299</span>
+     </div><button onclick="openModal()" class="btn-primary bg-red-600 hover:bg-red-700 px-12 py-4 rounded-lg text-xl font-bold pulse-animation transition-all"> 🎮 Get Your Copy Now! </button>
+    </div><!-- BGMI Screenshots/Images Section -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+     <div class="game-card rounded-xl p-6 text-center">
+      <div class="w-full h-48 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg mb-4 flex items-center justify-center">
+       <svg class="w-24 h-24 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold mb-2">Survival Strategies</h3>
+      <p class="text-gray-400">Advanced tactics for lasting longer in matches</p>
+     </div>
+     <div class="game-card rounded-xl p-6 text-center">
+      <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
+       <svg class="w-24 h-24 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold mb-2">Weapon Mastery</h3>
+      <p class="text-gray-400">Complete guide to all weapons and attachments</p>
+     </div>
+     <div class="game-card rounded-xl p-6 text-center">
+      <div class="w-full h-48 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg mb-4 flex items-center justify-center">
+       <svg class="w-24 h-24 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+       </svg>
+      </div>
+      <h3 class="text-xl font-bold mb-2">Pro Tips</h3>
+      <p class="text-gray-400">Secret techniques used by top players</p>
+     </div>
+    </div><!-- Features Section -->
+    <div class="game-card rounded-xl p-8 mb-16">
+     <h3 class="text-3xl font-bold text-center mb-8">What You'll Learn</h3>
+     <div class="grid md:grid-cols-2 gap-6">
+      <div class="flex items-start space-x-3"><span class="text-2xl">🎯</span>
+       <div>
+        <h4 class="font-bold mb-2">Advanced Aiming Techniques</h4>
+        <p class="text-gray-400">Master recoil control and improve your accuracy</p>
+       </div>
+      </div>
+      <div class="flex items-start space-x-3"><span class="text-2xl">🗺️</span>
+       <div>
+        <h4 class="font-bold mb-2">Map Knowledge</h4>
+        <p class="text-gray-400">Best landing spots and rotation strategies</p>
+       </div>
+      </div>
+      <div class="flex items-start space-x-3"><span class="text-2xl">⚡</span>
+       <div>
+        <h4 class="font-bold mb-2">Quick Decision Making</h4>
+        <p class="text-gray-400">React faster in high-pressure situations</p>
+       </div>
+      </div>
+      <div class="flex items-start space-x-3"><span class="text-2xl">🏆</span>
+       <div>
+        <h4 class="font-bold mb-2">Ranking Up Fast</h4>
+        <p class="text-gray-400">Proven methods to climb the leaderboards</p>
+       </div>
+      </div>
+     </div>
+     <div class="text-center mt-8">
+      <p id="features-text" class="text-lg text-gray-300">Advanced strategies, weapon guides, map tactics</p>
+     </div>
+    </div><!-- Call to Action -->
+    <div class="text-center">
+     <h3 class="text-3xl font-bold mb-4">Ready to Dominate BGMI?</h3>
+     <p class="text-xl text-gray-300 mb-8">Join thousands of players who have improved their game!</p><button onclick="openModal()" class="btn-primary bg-red-600 hover:bg-red-700 px-12 py-4 rounded-lg text-xl font-bold pulse-animation transition-all"> 🚀 Start Your Journey - ₹299 Only! </button>
+    </div>
+   </main><!-- Purchase Modal -->
+   <div id="purchase-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+    <div class="game-card rounded-xl p-8 max-w-md w-full mx-4">
+     <div class="flex justify-between items-center mb-6">
+      <h3 class="text-2xl font-bold">Complete Your Purchase</h3><button onclick="closeModal()" class="text-gray-400 hover:text-white text-2xl">×</button>
+     </div>
+     <form onsubmit="handlePurchase(event)" class="space-y-4">
+      <div><label for="name" class="block text-sm font-medium mb-2">Full Name</label> <input type="text" id="name" name="name" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+      </div>
+      <div><label for="email" class="block text-sm font-medium mb-2">Email Address</label> <input type="email" id="email" name="email" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+      </div>
+      <div><label for="phone" class="block text-sm font-medium mb-2">Phone Number</label> <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+      </div>
+      <div><label for="payment" class="block text-sm font-medium mb-2">Payment Method</label> <select id="payment" name="payment" required class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"> <option value="">Select Payment Method</option> <option value="upi">UPI</option> <option value="paytm">Paytm</option> <option value="phonepe">PhonePe</option> <option value="gpay">Google Pay</option> <option value="netbanking">Net Banking</option> </select>
+      </div>
+      <div class="border-t border-gray-600 pt-4">
+       <div class="flex justify-between items-center mb-4"><span class="text-lg">Total Amount:</span> <span class="text-2xl font-bold price-highlight">₹299</span>
+       </div><button type="submit" class="w-full btn-primary bg-red-600 hover:bg-red-700 py-3 rounded-lg font-bold transition-colors"> Complete Purchase </button>
+      </div>
+     </form>
+     <p class="text-xs text-gray-400 text-center mt-4">* This is a demo payment form. No actual payment will be processed.</p>
+    </div>
+   </div>
   </div>
-
-  <img src="https://i.postimg.cc/W34HGm2p/Whats-App-Image-2025-10-20-at-08-10-18-e93b972f.jpg" alt="PhonePe QR" class="qr">
-
-  <p><del>₹199</del> <b style="color:#6a1b9a;">₹79 Only</b></p>
-
-  <!-- Pay Now button (opens UPI app) -->
-  <a href="upi://pay?pa=souravn027@okicici&pn=XTREMEGOD&am=79&cu=INR&tn=BGMI Gameplay Improvement">
-    <button class="btn">Pay Now</button>
-  </a>
-
-  <!-- Copy button -->
-  <button class="btn secondary" onclick="copyUpi()">Copy UPI ID</button>
-
-  <p class="note" id="msg">
-    📸 After payment, send screenshot to <b>@xtremegod_</b> on Instagram<br>
-    to get your BGMI Gameplay Improvement book.
-  </p>
-</div>
-
-<script>
-function copyUpi() {
-  const upi = "souravn027@okicici";
-  navigator.clipboard.writeText(upi).then(() => {
-    document.getElementById("msg").innerHTML = "✅ UPI ID copied! Paste it in GPay / PhonePe to pay ₹79.<br>📸 After payment, send screenshot to <b>@xtremegod_</b>.";
-  }).catch(() => {
-    alert("⚠️ Copy failed. Please copy manually: " + upi);
-  });
-}
-</script>
-
-</body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'994a370eb6f88fad',t:'MTc2MTQ4NDQ0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
