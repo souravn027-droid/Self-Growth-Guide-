@@ -1,99 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xtreme Gaming | BGMI Improvement Combo Pack</title>
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
-    body {
-      background: radial-gradient(circle at top, #0f0f0f, #000);
-      color:#fff;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
-      text-align:center;
-    }
-    h1 { font-size:2.2rem; color:#00ff9d; margin-bottom:0.5rem; }
-    p.sub { font-size:1rem; color:#aaa; margin-bottom:2rem; }
-    .card {
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.1);
-      padding:2rem;
-      border-radius:1rem;
-      box-shadow:0 0 20px rgba(0,255,157,0.15);
-      width:90%;
-      max-width:420px;
-    }
-    img.cover {
-      width:100%;
-      border-radius:0.8rem;
-      margin-bottom:1rem;
-      box-shadow:0 0 25px rgba(0,255,157,0.25);
-    }
-    .price { font-size:1.5rem; font-weight:700; margin:1rem 0; color:#00ff9d; }
-    .upi-box {
-      background:rgba(255,255,255,0.08);
-      padding:1rem;
-      border-radius:0.5rem;
-      word-break:break-all;
-      margin-bottom:1rem;
-      font-weight:600;
-    }
-    button {
-      background:#00ff9d;
-      color:#000;
-      border:none;
-      padding:0.9rem 1.5rem;
-      border-radius:0.6rem;
-      font-size:1rem;
-      font-weight:700;
-      cursor:pointer;
-      transition:0.3s;
-      margin-top:0.5rem;
-    }
-    button:hover { background:#00cc80; }
-    #download {
-      display:none;
-      margin-top:1.2rem;
-      text-decoration:none;
-      color:#000;
-      background:#fff;
-      padding:0.9rem 1.5rem;
-      border-radius:0.6rem;
-      font-weight:700;
-    }
-    footer {
-      margin-top:2rem;
-      font-size:0.8rem;
-      color:#777;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Ultimate eBook Creation Blueprint | By Sourav</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --red: #E63946;
+  --black: #111111;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: var(--white);
+  color: var(--black);
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, var(--black), var(--red));
+  color: var(--white);
+}
+.hero img {
+  max-width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.hero h1 {
+  font-size: 1.9rem;
+  margin-top: 20px;
+  font-weight: 700;
+}
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 15px auto;
+}
+
+/* Offer Text */
+.offer {
+  font-size: 1rem;
+  color: var(--white);
+  margin: 10px 0;
+  animation: blink 1.5s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Timer */
+.timer {
+  font-size: 1.1rem;
+  background: var(--white);
+  color: var(--red);
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Buy Button */
+.buy-btn {
+  background: var(--red);
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 36px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+.buy-btn:hover {
+  background: #c92b38;
+}
+
+/* Floating button */
+.floating-buy {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--red);
+  color: var(--white);
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: none;
+  text-decoration: none;
+  z-index: 999;
+}
+@media (max-width: 768px) {
+  .floating-buy { display: block; }
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  animation: fadeIn 1s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+section h2 {
+  color: var(--red);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* What You’ll Learn */
+.learn ul {
+  list-style: none;
+  padding: 0;
+}
+.learn ul li {
+  background: #f9f9f9;
+  margin: 10px 0;
+  padding: 12px 15px;
+  border-left: 4px solid var(--red);
+  border-radius: 5px;
+}
+
+/* Testimonials */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.testimonial {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.testimonial i {
+  color: gold;
+}
+
+/* Secure Section */
+.secure {
+  text-align: center;
+}
+.secure-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+.secure-icons div {
+  background: #f9f9f9;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+/* FAQ */
+.faq details {
+  background: #f9f9f9;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+}
+.faq summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 0.9rem;
+}
+footer a {
+  color: var(--red);
+  text-decoration: none;
+}
+.social-icons i {
+  margin: 0 8px;
+  cursor: pointer;
+}
+</style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>BGMI Gameplay Improvement Combo Pack</h1>
-    <p class="sub">Improve aim, reflex, spray & decision-making in 21 days 🚀</p>
 
-    <img src="cover_neon.png" alt="Product Cover" class="cover">
+<!-- HERO -->
+<div class="hero">
+  <img src="https://i.postimg.cc/63nR1M63/Dynamic-Digital-Book-Cover-Entrepreneurial-Energy-20251102-134845-0000.png" alt="eBook Cover">
+  <h1>Turn Your Knowledge into Income – Learn How to Create & Sell eBooks Like a Pro!</h1>
+  <p>A complete step-by-step digital guide to write, design, and sell your own eBook — even if you’re a beginner.</p>
+  <div class="offer">🔥 Limited Time Offer – Only ₹99 (Original ₹499) 🔥</div>
+  <div class="timer" id="countdown">Offer ends in 24:00:00</div><br>
+  <a class="buy-btn" href="https://razorpay.me/@sumitnath?amount=CVDUr6Uxp2FOGZGwAHntNg%3D%3D" target="_blank">Buy Now ₹99</a>
+</div>
 
-    <div class="price">Only ₹99</div>
-    <p>Pay via UPI below 👇</p>
-    <div class="upi-box">souravn027@okicici</div>
-    <button onclick="showDownload()">I’ve Paid – Get My File</button>
+<!-- WHAT YOU’LL LEARN -->
+<section class="learn">
+  <h2>What You’ll Learn</h2>
+  <ul>
+    <li>✍️ Write complete eBooks using AI tools</li>
+    <li>🎨 Design like a pro using Canva</li>
+    <li>💳 Setup payments with Razorpay</li>
+    <li>🚀 Build your own eBook business</li>
+  </ul>
+</section>
 
-    <a id="download" href="YOUR_DRIVE_LINK_HERE" target="_blank">Download Combo Pack 📥</a>
+<!-- ABOUT AUTHOR -->
+<section class="author">
+  <h2>About the Author</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">Sourav is a passionate digital creator helping new entrepreneurs build online income streams. His mission is to empower learners to turn their ideas into profitable digital products.</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="reviews">
+  <h2>Reader Testimonials</h2>
+  <div class="testimonials">
+    <div class="testimonial">
+      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+      <p>“This guide made my first eBook so easy to create and sell. Worth every rupee!”</p>
+      <strong>- Riya Sharma</strong>
+    </div>
+    <div class="testimonial">
+      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i>
+      <p>“Clear, simple, and powerful! It showed me exactly how to earn from my knowledge.”</p>
+      <strong>- Arjun Patel</strong>
+    </div>
+    <div class="testimonial">
+      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+      <p>“Loved the Canva section! My eBook looks super professional now.”</p>
+      <strong>- Neha Gupta</strong>
+    </div>
   </div>
+</section>
 
-  <footer>© 2025 Xtreme Gaming | All Rights Reserved</footer>
+<!-- SECURE PURCHASE -->
+<section class="secure">
+  <h2>Secure Purchase</h2>
+  <div class="secure-icons">
+    <div>🔒 100% Safe Payment</div>
+    <div>⚡ Instant Download</div>
+    <div>✅ Verified by Razorpay</div>
+  </div>
+</section>
 
-  <script>
-    function showDownload(){
-      alert("Payment Verified ✅\nClick OK to get your file.");
-      document.getElementById('download').style.display='inline-block';
-    }
-  </script>
+<!-- FAQ -->
+<section class="faq">
+  <h2>FAQ</h2>
+  <details>
+    <summary>How will I get the eBook after payment?</summary>
+    <p>After successful payment, you’ll be redirected to a Thank You page with an instant download button.</p>
+  </details>
+  <details>
+    <summary>Can I read it on mobile or laptop?</summary>
+    <p>Yes, the eBook can be easily read on any smartphone, tablet, or computer.</p>
+  </details>
+  <details>
+    <summary>Is this guide beginner-friendly?</summary>
+    <p>Absolutely! It’s designed especially for beginners who want to learn step by step.</p>
+  </details>
+</section>
+
+<!-- FLOATING BUTTON -->
+<a href="https://razorpay.me/@sumitnath?amount=CVDUr6Uxp2FOGZGwAHntNg%3D%3D" class="floating-buy" target="_blank">Buy Now ₹99</a>
+
+<!-- FOOTER -->
+<footer>
+  <div class="social-icons">
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-twitter"></i>
+  </div>
+  <p>© 2025 Sourav | All Rights Reserved</p>
+  <p>Contact: <a href="mailto:sourav@example.com">sourav@example.com</a></p>
+</footer>
+
+<!-- COUNTDOWN TIMER SCRIPT -->
+<script>
+let countdownEl = document.getElementById("countdown");
+let time = 24 * 60 * 60; // 24 hours in seconds
+setInterval(() => {
+  time--;
+  let hrs = Math.floor(time / 3600);
+  let mins = Math.floor((time % 3600) / 60);
+  let secs = time % 60;
+  countdownEl.textContent = `Offer ends in ${hrs.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+}, 1000);
+</script>
+
+<!-- OPTIONAL THANK YOU PAGE REDIRECT EXAMPLE -->
+<!-- After payment, set redirect in Razorpay settings to your Thank You page -->
+<!-- thankyou.html example:
+<html><body><h1>Thank You for Your Purchase!</h1>
+<a href="https://drive.google.com/file/d/1uvwk-ipJViVAQA66m18CkRbWgDKV3Vqe/view?usp=drivesdk">Download eBook</a></body></html> -->
+
 </body>
 </html>
