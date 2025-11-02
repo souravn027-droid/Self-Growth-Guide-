@@ -1,74 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You for Your Purchase!</title>
   <style>
     body {
-      font-family: "Poppins", sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #007bff, #00d4ff);
+      color: #fff;
+      text-align: center;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
     }
     .container {
+      max-width: 600px;
+      margin: 100px auto;
       background: rgba(255, 255, 255, 0.1);
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      animation: fadeIn 1.2s ease-in-out;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
     h1 {
-      font-size: 2.2rem;
+      font-size: 2em;
       margin-bottom: 10px;
     }
     p {
-      font-size: 1rem;
-      margin-bottom: 30px;
+      font-size: 1.1em;
+      margin-bottom: 25px;
     }
-    .button {
-      background-color: #00ffcc;
-      color: #000;
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
+    .download-btn {
+      background: #fff;
+      color: #007bff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1em;
+      cursor: pointer;
       transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
     }
-    .button:hover {
-      background-color: #fff;
-      color: #000;
+    .download-btn:hover {
+      background: #007bff;
+      color: #fff;
       transform: scale(1.05);
     }
     footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9rem;
-      color: #eee;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      margin-top: 40px;
+      font-size: 0.9em;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>🎉 Thank You for Your Purchase!</h1>
-    <p>Your payment has been successfully received.</p>
-    <p>Click below to download your eBook instantly ⬇️</p>
-    <a href="https://drive.google.com/file/d/1uvwk-IpJVlVAQ6o618cRkNbgDkV9Xqge/view?usp=drivesdk" 
-       target="_blank" class="button">📘 Download eBook</a>
+    <p>Your payment has been received successfully.</p>
+    <p>Click below to download your eBook instantly 👇</p>
+    <a href="https://drive.google.com/file/d/1uvwk-ipJViVAQA66m18CkRbWgDKV3Vqe/view?usp=drivesdk" 
+       class="download-btn" target="_blank">📘 Download eBook</a>
+    <footer>© 2025 Sourav Nath | All Rights Reserved</footer>
   </div>
-  <footer>© 2025 Sourav | All Rights Reserved</footer>
 </body>
 </html>
